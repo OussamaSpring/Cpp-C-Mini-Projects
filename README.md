@@ -8,7 +8,7 @@ This repository contains a collection of my mini projects written in C and C++. 
 
    This project is a console-based calculator program implemented in C. It provides various mathematical operations such as addition, subtraction, multiplication, division, exponentiation, factorial, sine, and cosine. The program displays a menu with options for the user to choose from, and it continues to execute until the user selects the exit option. The calculator uses functions for each mathematical operation, making the code modular and easier to understand. Overall, it's a simple yet effective calculator application for basic mathematical calculations.
    
-3. [**Project 2:** Student Record Management System in C.](Studnet_Record_Management_System.c)
+3. [**Project 2:** Student Record Management System in C.](Student_Record_Management_System.c)
 
    This project is a simple student record management system implemented in C. It allows users to perform various operations such as adding a new student record, displaying a student record, deleting a student record, filling in the marks of a student record, searching for a student, and displaying a report card of a specific student. The program uses a struct to store student information such as ID, name, birth date, address, class, emergency contact, and average. It also uses a 2D array to store student marks for different subjects. The system provides a user-friendly menu interface for easy navigation.
 
