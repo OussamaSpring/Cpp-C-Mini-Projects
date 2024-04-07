@@ -486,8 +486,6 @@ RoomPtr AddNewRoom(RoomPtr RoomList, RoomPtr NewRoom)
 void SearchRoomByName(RoomPtr RoomList, char Name[MAX_STRING_SIZE], bool *IsExist)
 {
   RoomPtr current = RoomList;
-  int i = 0;
-
   while (current != NULL)
   {
     if (strcmp(current->Name, Name) == 0)
@@ -871,36 +869,50 @@ void DisplayReservationsScreen(ReservationPtr ReservationList)
   PauseProgram();
 }
 
+void SwapReservationData(ReservationPtr Reservation1, ReservationPtr Reservation2)
+{
+  int tmpID = Reservation1->ID;
+  int tmpUserID = Reservation1->UserID;
+  int tmpRoomID = Reservation1->RoomID;
+
+  stDate tmpDate = Reservation1->Date;
+  stTime tmpStart_Time = Reservation1->Start_Time;
+  stTime tmpEnd_Time = Reservation1->End_Time;
+
+  Reservation1->ID = Reservation2->ID;
+  Reservation1->UserID = Reservation2->UserID;
+  Reservation1->RoomID = Reservation2->RoomID;
+
+  Reservation1->Date = Reservation2->Date;
+  Reservation1->Start_Time = Reservation2->Start_Time;
+  Reservation1->End_Time = Reservation2->End_Time;
+
+  Reservation2->ID = tmpID;
+  Reservation2->UserID = tmpUserID;
+  Reservation2->RoomID = tmpRoomID;
+
+  Reservation2->Date = tmpDate;
+  Reservation2->Start_Time = tmpStart_Time;
+  Reservation2->End_Time = tmpEnd_Time;
+}
+
 ReservationPtr SortReservationsByDate(ReservationPtr ReservationList)
 {
-  if (ReservationList == NULL)
-    return NULL;
+  ReservationPtr current1 = ReservationList;
+  ReservationPtr current2 = NULL;
 
-  ReservationPtr current = ReservationList;
-  ReservationPtr previous = NULL;
-  ReservationPtr next = NULL;
-
-  while (current != NULL)
+  while (current1->Next != NULL)
   {
-    next = current->Next;
-    while (next != NULL)
+    current2 = current1->Next;
+    while (current2 != NULL)
     {
-      if (IsDate1BeforeDate2(next->Date, current->Date))
+      if (IsDate1BeforeDate2(current2->Date, current1->Date))
       {
-        if (previous != NULL)
-          previous->Next = next;
-        else
-          ReservationList = next;
-
-        current->Next = next->Next;
-        next->Next = current;
-
-        current = next;
+        SwapReservationData(current1, current2);
       }
-      previous = current;
-      current = current->Next;
-      next = current->Next;
+      current2 = current2->Next;
     }
+    current1 = current1->Next;
   }
   return ReservationList;
 }
