@@ -359,10 +359,12 @@ void DeleteUserScreen(UserPtr *UserList)
   printf("\nPlease enter ID: ");
   ID = ReadIntBetween(0, 9999);
 
-  if (SearchUserByID(*UserList, ID) != NULL)
+  UserPtr User = SearchUserByID(*UserList, ID);
+  if (User != NULL)
   {
+    DisplayUserCard(User);
     char Choice = 'n';
-    printf("\nAre you sure you want to delete this user? y/n? ");
+    printf("\n\nAre you sure you want to delete this user? y/n? ");
     scanf(" %c", &Choice);
     if (Choice == 'y')
     {
@@ -543,7 +545,7 @@ void SearchRoomByNameScreen(RoomPtr RoomList)
 
   char Name[MAX_STRING_SIZE];
   printf("\nPlease enter name: ");
-  scanf("%s", &Name);
+  scanf("%s", Name);
 
   SearchRoomByName(RoomList, Name, &IsExist);
 
@@ -598,11 +600,12 @@ void DeleteRoomScreen(RoomPtr *RoomList)
   int ID;
   printf("\nPlease enter ID: ");
   ID = ReadIntBetween(0, 9999);
-
-  if (SearchRoomByID(*RoomList, ID) != NULL)
+  RoomPtr Room = SearchRoomByID(*RoomList, ID);
+  if (Room != NULL)
   {
+    DisplayRoomCard(Room);
     char Choice = 'n';
-    printf("\nAre you sure you want to delete this room? y/n? ");
+    printf("\n\nAre you sure you want to delete this room? y/n? ");
     scanf(" %c", &Choice);
     if (Choice == 'y')
     {
