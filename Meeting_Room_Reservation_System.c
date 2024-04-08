@@ -532,7 +532,7 @@ void AddNewRoomScreen(RoomPtr *RoomList)
     printf("\nRoom Added Successfully!\n");
   }
   else
-    printf("\nUser with ID [%d] already exist!\n", NewRoom->ID);
+    printf("\nRoom with ID [%d] already exist!\n", NewRoom->ID);
 
   PauseProgram();
 }
@@ -550,7 +550,7 @@ void SearchRoomByNameScreen(RoomPtr RoomList)
   SearchRoomByName(RoomList, Name, &IsExist);
 
   if (IsExist == false)
-    printf("\nUser not Found!\n");
+    printf("\nRoom not Found!\n");
 
   PauseProgram();
 }
