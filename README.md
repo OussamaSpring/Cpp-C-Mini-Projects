@@ -2,7 +2,7 @@
 
 This repository contains a collection of my mini projects written in C and C++. Each project is a small, self-contained program that demonstrates various concepts and techniques in C/C++. Feel free to explore the projects and use them as a reference or inspiration for your own projects.
 
-## Project List
+## Projects List
 
 1. [**Project 1:** Calculator in C.](Simple_Calculator.c)
 
@@ -25,7 +25,7 @@ This repository contains a collection of my mini projects written in C and C++. 
 
 5. [**Project 5:** Meeting Room Reservation System C.](Meeting_Room_Reservation_System.c)
 
-   This project, titled "Meeting Room Reservation System", is a console-based application written in C. It is designed to manage and schedule meeting room reservations in an organized manner. Key features of the system include:
+   This project, titled "Meeting Room Reservation System", is a console-based application written in C. It is designed to manage and schedule meeting room reservations in an organized dynamic manner using linked list data structure. Key features of the system include:
 
       1. **Reservation Management**: Users can create, view, and delete reservations. Each reservation includes details such as the room ID, reservation date, and start and end times.
 
