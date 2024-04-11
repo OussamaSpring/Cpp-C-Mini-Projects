@@ -27,10 +27,13 @@ This repository contains a collection of my mini projects written in C and C++. 
 
    This project, titled "Meeting Room Reservation System", is a console-based application written in C. It is designed to manage and schedule meeting room reservations in an organized manner. Key features of the system include:
 
-    ***Reservation Management***: Users can create, view, and delete reservations. Each reservation includes details such as the room ID, reservation date, and start and end times.
-    ***Room Status Tracking***: Each room's reservation status is tracked. When a reservation is deleted, the room's status is updated to not reserved, and its associated date and time details are reset.
-    ***Reservation Search***: The system provides functionality to search for reservations by ID. If a reservation with the given ID is found, its details are displayed. If not, a message is shown indicating that the reservation was not found.
-    ***User Interface***: The system provides a console-based user interface with clear prompts and messages to guide the user through the process of managing reservations.
+      1. **Reservation Management**: Users can create, view, and delete reservations. Each reservation includes details such as the room ID, reservation date, and start and end times.
 
-##Conclusion
+      2. **Room Status Tracking**: Each room's reservation status is tracked. When a reservation is deleted, the room's status is updated to not reserved, and its associated date and time details are reset.
+
+      3. **Reservation Search**: The system provides functionality to search for reservations by ID. If a reservation with the given ID is found, its details are displayed. If not, a message is shown indicating that the reservation was not found.
+
+      4. **User Interface**: The system provides a console-based user interface with clear prompts and messages to guide the user through the process of managing reservations.
+
+## Conclusion
 Contributions are welcome! If you have ideas for new projects or improvements to existing ones, feel free to open an issue or submit a pull request.
