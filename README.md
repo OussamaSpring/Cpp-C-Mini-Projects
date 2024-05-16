@@ -35,5 +35,9 @@ This repository contains a collection of my mini projects written in C and C++. 
 
       4. **User Interface**: The system provides a console-based user interface with clear prompts and messages to guide the user through the process of managing reservations.
 
+6. [**Project 6:** Bank Management System in c++.](Bank_System.cpp)
+
+   This project is a console-based simple bank management system implemented in C++. It allows users to perform basic banking operations such as adding new clients, updating client information, depositing and withdrawing funds, and viewing client lists and balances. The system stores client data in a text file and provides a command-line interface for interacting with the system.
+
 ## Conclusion
 Contributions are welcome! If you have ideas for new projects or improvements to existing ones, feel free to open an issue or submit a pull request.
