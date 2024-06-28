@@ -3,8 +3,18 @@
 
 using namespace std;
 
-enum enGameChoice {Stone = 1, Paper = 2, Scissors = 3};
-enum enWinner {Player1 = 1, Computer = 2, Draw = 3};
+enum enGameChoice
+{
+	Stone = 1,
+	Paper = 2,
+	Scissors = 3
+};
+enum enWinner
+{
+	Player1 = 1,
+	Computer = 2,
+	Draw = 3
+};
 
 struct stRoundInfo
 {
@@ -33,7 +43,7 @@ int RandomNumber(int From, int To)
 
 string WinnerName(enWinner Winner)
 {
-	string arrWinnerName[3] = { "Player1", "Computer", "No Winner"};
+	string arrWinnerName[3] = {"Player1", "Computer", "No Winner"};
 	return arrWinnerName[Winner - 1];
 }
 
@@ -46,31 +56,31 @@ enWinner WhoWonTheRound(stRoundInfo RoundInfo)
 
 	switch (RoundInfo.Player1Choice)
 	{
-		case enGameChoice::Stone:
-			if (RoundInfo.ComputerChoice == enGameChoice::Paper)
-			{
-				return enWinner::Computer;
-			}
-			break;
-		case enGameChoice::Paper:
-			if (RoundInfo.ComputerChoice == enGameChoice::Scissors)
-			{
-				return enWinner::Computer;
-			}
-			break;
-		case enGameChoice::Scissors:
-			if (RoundInfo.ComputerChoice == enGameChoice::Stone)
-			{
-				return enWinner::Computer;
-			}
-			break;
+	case enGameChoice::Stone:
+		if (RoundInfo.ComputerChoice == enGameChoice::Paper)
+		{
+			return enWinner::Computer;
+		}
+		break;
+	case enGameChoice::Paper:
+		if (RoundInfo.ComputerChoice == enGameChoice::Scissors)
+		{
+			return enWinner::Computer;
+		}
+		break;
+	case enGameChoice::Scissors:
+		if (RoundInfo.ComputerChoice == enGameChoice::Stone)
+		{
+			return enWinner::Computer;
+		}
+		break;
 	}
 	return enWinner::Player1;
 }
 
 string ChoiceName(enGameChoice Choice)
 {
-	string arrGameChoices[3] = { "Stone", "Paper", "Scissors" };
+	string arrGameChoices[3] = {"Stone", "Paper", "Scissors"};
 	return arrGameChoices[Choice - 1];
 }
 
@@ -78,16 +88,16 @@ void SetWinnerScreenColor(enWinner Winner)
 {
 	switch (Winner)
 	{
-		case enWinner::Player1:
-			system("color 2F"); //turn screen to Green
-			break;
-		case enWinner::Computer:
-			system("color 4F"); //turn screen to Red
-			cout << "\a";
-			break;
-		default:
-			system("color 6F"); //turn screen to Yellow
-			break;
+	case enWinner::Player1:
+		system("color 2F"); // turn screen to Green
+		break;
+	case enWinner::Computer:
+		system("color 4F"); // turn screen to Red
+		cout << "\a";
+		break;
+	default:
+		system("color 6F"); // turn screen to Yellow
+		break;
 	}
 }
 
@@ -97,7 +107,8 @@ void PrintRoundResults(stRoundInfo RoundInfo)
 	cout << "Player1 Choice : " << ChoiceName(RoundInfo.Player1Choice) << endl;
 	cout << "Computer Choice: " << ChoiceName(RoundInfo.ComputerChoice) << endl;
 	cout << "Round Winner  : [" << RoundInfo.WinnerName << "]\n";
-	cout << "__________________________________\n" << endl;
+	cout << "__________________________________\n"
+			 << endl;
 
 	SetWinnerScreenColor(RoundInfo.Winner);
 }
@@ -140,7 +151,7 @@ enGameChoice ReadPlayer1Choice()
 
 enGameChoice GetComputerChoice()
 {
-	return (enGameChoice)RandomNumber(1,3);
+	return (enGameChoice)RandomNumber(1, 3);
 }
 
 stGameResults PlayGame(short HowManyRounds)
@@ -226,7 +237,8 @@ void StartGame()
 		ShowGameOverScreen();
 		ShowFinalGameResults(GameResults);
 
-		cout << endl << Tabs(3) << "Do you want to play again? Y/N ? ";
+		cout << endl
+				 << Tabs(3) << "Do you want to play again? Y/N ? ";
 		cin >> PlayAgain;
 	} while (PlayAgain == 'Y' || PlayAgain == 'y');
 }
