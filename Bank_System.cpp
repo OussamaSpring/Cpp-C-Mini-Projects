@@ -702,9 +702,12 @@ void ShowTransactionsMenue()
 
 short ReadMainMenueOption()
 {
-  cout << "Choose what do you want to do? [1 to 7]? ";
   short Choice = 0;
-  cin >> Choice;
+  do
+  {
+    cout << "Choose what do you want to do? [1 to 7]? ";
+    cin >> Choice;
+  } while (Choice < 1 || Choice > 7);
 
   return Choice;
 }
@@ -774,7 +777,6 @@ void ShowMainMenue()
 }
 
 int main()
-
 {
   ShowMainMenue();
   system("pause>0");
